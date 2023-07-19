@@ -270,14 +270,13 @@
                     let today = new Date()
                     let year = today.getFullYear()
                     let month = today.getMonth() + 1
-                    // 月份不足兩位數自動補零
-                    month = updateInfo(month)
+                    month = updateInfo(month) // 月不足兩位數自動補零
                     let date = today.getDate()
-                    date = updateInfo(date)
+                    date = updateInfo(date) // 日不足兩位數自動補零
                     let hour = today.getHours()
-                    hour = updateInfo(hour)
+                    hour = updateInfo(hour) // 時不足兩位數自動補零
                     let min = today.getMinutes()
-                    min = updateInfo(min)
+                    min = updateInfo(min) // 分不足兩位數自動補零
                     updateInfoDom.innerText = `最後更新時間: ${year}/${month}/${date} ${hour}:${min}`
                 })
                 .catch(err => {
@@ -285,6 +284,7 @@
                 })
         }
 
+        // 不足兩位數自動補零
         function updateInfo(data) {
             let updateData = data < 10 ? '0' + data : data
             //console.log(updateData)
@@ -309,10 +309,6 @@
                     marker = L.marker([item.lat, item.lng])
                 }
 
-
-                // L.marker([51.5, -0.09], { icon: greenIcon }).addTo(map);
-
-                //console.log(marker)
                 marker.bindPopup(`
                     <h5>${item.sna}</h5>
                     <p>${item.ar}</p>

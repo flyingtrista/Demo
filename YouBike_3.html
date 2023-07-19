@@ -233,7 +233,6 @@
         function initFN() {
             initMap(); // 初始化地圖
             getMapData(); // 取得資料
-            // reNewMapData(); // 執行每一分鐘更新一次資料
         }
 
         function initMap() {
@@ -243,29 +242,9 @@
                 maxZoom: 19,
                 attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }).addTo(map) // 加入地圖圖層
-
-            //var marker = L.marker([latitude, longitude]).addTo(map) // 加入標記
-
-
-            //marker.bindPopup(`定位：${latitude},${longitude}`)
-
         }
 
-        // 每一分鐘更新一次資料 => Andy表示不要這麼寫
-        // function reNewMapData() {
-        //     let key = setInterval(() => {
-        //         if (navigator.onLine == false) {
-        //             alert('網路連線異常，請檢查網路連線')
-        //             clearInterval(key)
-        //             return
-        //         }
-        //         getMapData() // 更新地圖資料
-
-        //         if (inputDom.value != '') {
-        //             query() // 更新查詢結果
-        //         }
-        //     }, 60000);
-        // }
+       
 
         function renew() {
             getMapData() // 更新地圖資料
